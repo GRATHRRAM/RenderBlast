@@ -32,6 +32,8 @@ int main(void)
         }
     }
     
+    printf("saveing to ppm...");
+    
     RBC_RENDER2PPM(&rnd,"yes1.ppm");
 
     printf("done!\n");
