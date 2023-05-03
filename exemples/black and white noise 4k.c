@@ -1,7 +1,7 @@
 #include "RBlast.c"
 #include "RBlastConv.c"
 
-//4k color noise!
+//4k black and withe noise!
 #define resx 3840
 #define resy 2140
 #define max resx * resy
@@ -19,8 +19,8 @@ int main(void)
         for (int x = 0; x < rnd.RESOLUTION_X; x++)
         {
             clr[0] = rand() % 255;
-            clr[1] = rand() % 255;
-            clr[2] = rand() % 255;
+            clr[1] = clr[0];
+            clr[2] = clr[0];
             RB_RENDER_SET_PIXEL(&rnd,x,y,clr);
             counter++;
             if(counter > 550)
@@ -31,6 +31,8 @@ int main(void)
             }
         }
     }
+
+    printf("saveing to ppm...");
     
     RBC_RENDER2PPM(&rnd,"yes1.ppm");
 
