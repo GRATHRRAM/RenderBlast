@@ -1,1 +1,3 @@
 # RenderBlast
+
+Rendering c liberary
